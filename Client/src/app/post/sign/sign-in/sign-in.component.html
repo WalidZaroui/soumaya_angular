@@ -1,0 +1,71 @@
+
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="text-center border border-light p-5">
+    <h4 class="mb-4">Sign Up</h4>
+  
+    <div class="form-row mb-4">
+      <div class="col">
+        <!-- First name -->
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" [(ngModel)]="user.firstName" name="firstName" required />
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" [(ngModel)]="user.familyName" name="familyName" required />
+      </div>
+    </div>
+  
+    <!-- E-mail -->
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="user.email" name="email" required />
+  
+    <!-- Password -->
+    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="user.password" name="password" required />
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+      At least 8 characters and 1 digit
+    </small>
+  
+    <!-- Birthday -->
+    <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday" [(ngModel)]="user.birthday" name="birthday" />
+  
+    <!-- Phone number -->
+    <input type="text" id="defaultRegisterPhoneNumber" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock" [(ngModel)]="user.phoneNumber" name="phoneNumber" required />
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+      Optional - for two-step authentication
+    </small>
+  
+    <!-- Role -->
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-8 mx-auto d-flex justify-content-center">
+          <div>
+            <label>
+              <input type="radio" name="role" [(ngModel)]="user.role" value="student" /> Student
+            </label>
+            <label>
+              <input type="radio" name="role" [(ngModel)]="user.role" value="teacher" /> Teacher
+            </label>
+            <label>
+              <input type="radio" name="role" [(ngModel)]="user.role" value="admin" /> Admin
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Photo URL -->
+    <input type="text" id="defaultRegisterPhoto" class="form-control mb-4" placeholder="Photo URL" [(ngModel)]="user.photo" name="photo" />
+  
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4 btn-block" type="submit" (click)="createUser()">Sign up</button>
+  
+    <hr />
+  
+    <!-- Terms of service -->
+    <p>
+      By clicking <em>Sign up</em> you agree to our
+      <a href="auth" >terms of service</a>.
+    </p>
+  </div>
+</div>
+
+  <app-footer></app-footer>

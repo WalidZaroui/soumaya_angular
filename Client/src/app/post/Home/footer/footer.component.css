@@ -1,0 +1,45 @@
+footer{
+    background-color: rgb(62,69,81);
+    color: white;
+  }
+  footer a{
+    color: white;
+  }
+  footer a:hover{
+    color: rgb(2,179,228);
+    text-decoration: none;
+  }
+  .footer-copyright
+  {
+    background-color: rgb(50, 55, 65);
+  }
+  .btn-danger{
+    background-color: rgb(2,179,228) !important;
+    border-color: rgb(2,179,228) !important;
+  }
+  .btn-danger:hover{
+    background-color: white !important;
+    border-color: rgb(2,179,228) !important;
+    color: rgb(2,179,228) ! important;
+  }
+  .btn-floating{
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .btn-tw
+  {
+    color: #1da1f2! important;
+  }
+  .btn-fb{
+    color: #3C5A99 ! important;
+  }
+  .btn-gplus{
+    color: rgb(221, 75, 57)! important;
+  }
+  .btn-li{
+    color: #0077B5 ! important;
+  }
+  .btn-dribbble{
+    color: rgb(221, 75, 100)! important;
+  }
+  

@@ -1,0 +1,32 @@
+.navbar {
+    z-index: 5;
+    padding: 1rem;
+    background-color:  white ! important;
+  }
+  .navbar-nav li {
+    padding-right: 33px;
+  }
+  .nav-link{
+    font-size: 1.1em ! important;
+    color: black;
+  }
+  .active{
+    border-bottom: 2px solid rgb(2,179,228);
+    color: rgb(2,179,228) ! important;
+  }
+  #myv{
+    font-size: 1.4em ! important;
+    color: black;
+    font-weight: bold;
+  }
+  #uvy
+  {
+    font-size: 1.4em ! important;
+    color: rgb(2,179,228) ! important;
+  }
+  .nav-link:hover {
+    border-bottom: 2px solid rgb(2,179,228);
+    color: rgb(2,179,228) ! important;
+    cursor: pointer;
+  }
+  

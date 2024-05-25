@@ -1,0 +1,100 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 220px;
+    background: #0a3d62;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  mat-toolbar
+  {
+    background: #0a3d62!important;
+  }
+  mat-toolbar #firstPart, #secondPart{
+    padding-top: 8px;
+    font-size: 40px!important;
+    font-weight: bold;
+  }
+  mat-toolbar #firstPart
+  {
+  
+    padding-left: 10px;
+    color: white;
+  }
+  mat-toolbar #secondPart
+  {
+    color: #20aee3;
+  }
+  
+  
+  
+  
+  mat-nav-list {
+  
+    padding: 20px 0 0 0;
+  }
+  mat-nav-list li {
+    list-style: none;
+  }
+  mat-nav-list li a {
+    color: #8d97ad;
+    padding: 0 15px 10px 15px;
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  mat-nav-list li a span{
+    padding: 0 0 0 10px;
+    font-size: 17px;
+    font-family: "Comic Sans MS", sans-serif;
+  }
+  mat-nav-list li a:hover {
+    color: #20aee3; }
+  
+  mat-nav-list li a.active {
+    font-weight: 500;
+    color: #263238;
+  }
+  mat-nav-list > li {
+    margin-bottom: 8px;
+    margin-top: 8px; }
+  mat-nav-list > li.active > a {
+    color: #20aee3;
+    font-weight: 500; }
+  .size{
+    font-size: 33px;
+    padding-top: 12px;
+  }
+  #bottomSide{
+    position: absolute;
+    bottom: 0;
+  }
+  .userBlocName
+  {
+    position: absolute;
+    right: 0px;
+    font-size: 16px;
+  }
+  .avatar {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  #userNameAccount
+  {
+    padding: 0px 20px 0 5px;
+  }
+  

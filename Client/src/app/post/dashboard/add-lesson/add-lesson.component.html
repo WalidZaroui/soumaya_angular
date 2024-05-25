@@ -1,0 +1,57 @@
+<div>
+    <p class="text-center" style="color: #E91E63; font-size: 1.5em; font-weight: 500; letter-spacing: 0.1em;">Add Lesson</p>
+    <p class="matSubTitle">Lesson Details</p>
+    <div class="qcmLesson">
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Lesson Name</mat-label>
+        <input [(ngModel)]="lesson.name" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Description</mat-label>
+        <textarea [(ngModel)]="lesson.description" matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div class="text-center" style="margin-top: 10px">
+      <mat-radio-group [(ngModel)]="isVideo" aria-label="Select an option">
+        <mat-radio-button value="1">Video</mat-radio-button>
+        <mat-radio-button [checked]="true" value="2">QCM</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <!-- Video -->
+    <div *ngIf="isVideo == 1; else notvideo">
+      <form enctype="multipart/form-data">
+      <div class="inputFile">
+        <input (change)="fileChange($event)" accept="video/*" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" #fileInput>Choisir Image
+        <button mat-icon-button color="primary" (click)="fileInput.click()" class="mat-elevation-z2"><mat-icon>photo_camera</mat-icon></button>
+      </div>
+      </form>
+    </div>
+    <!-- QCM -->
+    <ng-template #notvideo>
+    <div class="qcmLesson">
+      <p class="matSubTitle">QCM Question</p>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Write Your QCM Question</mat-label>
+        <input [(ngModel)]="qcm.question" matInput>
+      </mat-form-field>
+      <p class="matSubTitle">QCM Answers</p>
+      <!-- QCM Answers -->
+      <div  *ngFor="let qcmAnswer of qcmAnswers">
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>Write Your QCM Answer</mat-label>
+          <input matInput [(ngModel)]="qcmAnswer.answer">
+          <mat-checkbox matSuffix [(ngModel)]="qcmAnswer.rightAnswer"></mat-checkbox>
+        </mat-form-field>
+      </div>
+      <div class="text-center">
+        <button mat-mini-fab color="accent" (click)="addAnswer()" style="margin-right: 10px"><mat-icon>add</mat-icon></button>
+        <button mat-mini-fab color="primary" (click)="removeAnswer()"><mat-icon>remove</mat-icon></button>
+      </div>
+    </div>
+    </ng-template>
+    <div class="text-right">
+      <button mat-raised-button style="margin-right: 10px" color="accent">Reset</button>
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </div>
+  </div>
+  

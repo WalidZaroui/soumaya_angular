@@ -1,0 +1,47 @@
+
+<mat-sidenav-container class="sidenav-container" *ngIf="user">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar><span id="firstPart">You</span><span id="secondPart">Learn</span></mat-toolbar>
+    <mat-nav-list >
+      <li class="active" onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a routerLink="../main"><i class="fa fa-home size"></i><span>Home</span></a>
+      </li>
+      <li onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a routerLink="myCourses"><i class="fa fa-graduation-cap size"></i><span>My Courses</span></a>
+      </li>
+      <li onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a routerLink="catalog" ><i class="fa fa-map size"></i><span>Catalog</span></a>
+      </li>
+      <li onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a ><i class="fa fa-envelope-square size"></i><span>Inbox</span></a>
+      </li>
+      <li *ngIf="user.role === 'trainer'" onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a routerLink="addCourse"><i class="fa fa-arrow-circle-up size"></i><span>Add course</span></a>
+      </li>
+      <li *ngIf="user.role === 'trainer'" onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a routerLink="uploaded"><i class="fa fa-database size"></i><span>Uploaded courses</span></a>
+      </li>
+      <div id="bottomSide">
+        <li onclick="document.getElementsByClassName('active')[0].classList.remove('active');this.classList.add('active')"> <a ><i class="fa fa-cog size"></i><span>Settings</span></a>
+        </li>
+        <li> <a mat-button (click)="logout()" ><i class="fa fa-power-off size" ></i><span>Logout</span></a>
+        </li>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="userBlocName">
+        <img src="/assets/images/js.png" alt="Avatar" class="avatar">
+        <span id="userNameAccount">  {{user.firstName}}</span>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

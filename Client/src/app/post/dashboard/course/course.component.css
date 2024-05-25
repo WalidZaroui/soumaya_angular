@@ -1,0 +1,59 @@
+.body-content
+{
+  width: 60%;
+  transform: translateY(15px) translateX(33%);
+  margin-bottom: 15px;
+}
+.courseTitle
+{
+  text-align: center;
+  font-family: "Comic Sans MS", sans-serif;
+}
+.courseImage
+{
+  width: 100%;
+  height: 450px;
+  padding-bottom: 30px;
+}
+.courseSubtitle{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Comic Sans MS", sans-serif;
+}
+#descr
+{
+  padding-top: 5px;
+}
+.primaryButton
+{
+  margin-top: 10px;
+  width: 90%;
+  background:#0a3d62;
+}
+.courseVideo
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.courseVideoPlay
+{
+  width: 100%;
+}
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+.quizQuestion {
+  font-size: 12px;
+  color: #7d97ad;
+  font-weight: 700;
+  padding: 20px 30px 0 30px;
+}
+.quizQuestion p{
+  margin-top: 7px;
+  font-size: 18px;
+  color: black;
+}
+.answerItem {
+  padding: 20px 40px;
+  border-top: 1px solid #dbe2e8;
+}

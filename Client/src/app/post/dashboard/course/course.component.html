@@ -1,0 +1,83 @@
+<div class="body-content">
+    <mat-card>
+      <mat-card-content>
+        <h1 class="courseTitle">{{course.name}}</h1>
+        <img [src]="course.image" class="courseImage">
+        <span class="courseSubtitle">Description</span>
+        <p id="descr">{{course.description}}</p>
+        <span class="courseSubtitle">Videos</span>
+        <div class="courseVideo">
+          <mat-accordion>
+            <mat-expansion-panel *ngFor="let lesson of exercise; let i = index">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{lesson.lesson.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{lesson.lesson.description}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <!--hne Video-->
+              <div *ngIf="lesson.type === 'qcm'" class="card">
+                <div class="quizQuestion" >
+                  <span>QUIZ QUESTION</span>
+                  <p>{{lesson.QCM.question}}</p>
+                </div>
+                <div  *ngFor="let qcm of lesson.bad" class="answerItem">
+                  <mat-checkbox color="primary" [(ngModel)]="qcm.answer"><span>{{qcm.name}}</span></mat-checkbox>
+                </div>
+                <div  *ngFor="let qcm of lesson.test" class="answerItem">
+                  <mat-checkbox color="primary" [(ngModel)]="qcm.answer"><span>{{qcm.name}}</span></mat-checkbox>
+                </div>
+                <div class="answerItem text-center">
+                  <button mat-raised-button *ngIf="course.publisher === userId" color="accent" style="width: 80%;" (click)="deleteLesson(lesson.lesson._id, i)">Delete</button>
+                  <button mat-raised-button color="primary" style="width: 80%;"  (click)="testAnswer(lesson)">Test</button>
+                </div>
+              </div>
+              <div *ngIf="lesson.type === 'vid'">
+                <video class="courseVideoPlay" controls >
+                  <source [src]="lesson.video.url" type="video/mp4">
+                </video>
+                <div class="answerItem text-center">
+                  <button *ngIf="course.publisher === userId" mat-raised-button color="accent" style="width: 80%;" (click)="deleteLesson(lesson.lesson._id, i)">Delete</button>
+                </div>
+              </div>
+            </mat-expansion-panel>
+            <!--<mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Lesson 2
+                </mat-panel-title>
+                <mat-panel-description>
+                  For Loop
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              &lt;!&ndash;hne Video&ndash;&gt;
+              <video class="courseVideoPlay" controls >
+                <source src="/assets/js.mp4" type="video/mp4">
+              </video>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Lesson 3
+                </mat-panel-title>
+                <mat-panel-description>
+                  Advanced JavaScript
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              &lt;!&ndash;hne Video&ndash;&gt;
+              <video class="courseVideoPlay" controls >
+                <source src="/assets/js.mp4" type="video/mp4">
+              </video>
+            </mat-expansion-panel>-->
+          </mat-accordion>
+        </div>
+        <div class="text-center">
+          <button *ngIf="course.publisher === userId" mat-raised-button color="primary" class="primaryButton" (click)="openDialog()">Add Lesson</button>
+        </div>
+      </mat-card-content>
+  
+    </mat-card>
+  </div>
+  
